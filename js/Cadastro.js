@@ -75,7 +75,7 @@ ChecaSenhaIgualANull = function(){
     var pConfirmPassword = document.getElementById("campoPasswordRecadastro").value
     ValidaSenhaIgualANull = 0
 
-    if(pPassword == "null" || pConfirmPassword){
+    if(pPassword == "null" || pConfirmPassword == "null"){
         alert("Sua senha não pode ser 'null' devido a regras do nosso sistema")
         return ValidaSenhaIgualANull = 1
     }
