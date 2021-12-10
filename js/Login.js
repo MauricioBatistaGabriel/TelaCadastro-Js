@@ -1,4 +1,5 @@
 var ValidaCamposVazios
+var ValidaLogin
 
 //BLOCO PRINCIPAL para Login
 const Login = function () {
@@ -12,6 +13,9 @@ const Login = function () {
 
     //Checa usuário e senha e loga
     ChecaUsuarioESenha()
+    if(ValidaLogin == 1){
+        return
+    }
 }
 
 ChecaCamposVazios = function () {
@@ -42,16 +46,19 @@ ChecaCamposVazios = function () {
 ChecaUsuarioESenha = function () {
     var pEmail = document.getElementById("campoEmail").value
     var pPassword = document.getElementById("campoPassword").value
-    var senha = localStorage.getItem((pEmail))
+    var senha = localStorage.getItem(pEmail)
+    ValidaLogin = 0
 
     if(senha == null){
         alert("Sua conta não foi encontrada")
+        return ValidaLogin = 1
     }
     if(senha == pPassword){
         alert("Login realizado com sucesso")
     }
     if(senha != pPassword){
         alert("Senha incorreta")
+        return ValidaLogin = 1
     }
-    alert(senha)
+
 }

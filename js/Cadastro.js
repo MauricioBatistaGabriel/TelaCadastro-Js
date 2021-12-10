@@ -98,5 +98,5 @@ ChecaSenhasIguais = function () {
 SalvaUsuarios = function () {
     var pEmail = document.getElementById("campoEmailCadastro").value
     var pPassword = document.getElementById("campoPasswordCadastro").value
-    localStorage.setItem(pEmail, JSON.stringify(pPassword))
+    localStorage.setItem(pEmail, pPassword)
 }
